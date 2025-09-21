@@ -17,3 +17,40 @@ Auxiliary Space: O(1)
 #include <stdio.h>
 #include "Node.h"
 
+Node *deleteLastOccurrence(Node *head, int key) {
+    Node *last = NULL, *lastPrevious = NULL;
+    Node *currentNode = head, *previousNode = NULL;
+
+    while (currentNode != NULL) {
+        if (currentNode->data == key) {
+            lastPrevious = previousNode;
+            last = currentNode;
+        }
+        previousNode = currentNode;
+        currentNode = currentNode->next;
+    }
+
+    if (last != NULL) {
+        if (lastPrevious != NULL) {
+            lastPrevious->next = last->next;
+        } else {
+            head = head->next;
+        }
+        free(last);
+    }
+
+    return head;
+}
+
+int main() {
+    Node *head = createNode(1);
+    head->next = createNode(2);
+    head->next->next = createNode(2);
+    head->next->next->next = createNode(4);
+    head->next->next->next->next = createNode(2);
+
+    const int key = 2;
+    head = deleteLastOccurrence(head, key);
+    printList(head);
+    return 0;
+}
