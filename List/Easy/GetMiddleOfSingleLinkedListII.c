@@ -68,6 +68,7 @@ int main() {
     head->next->next->next = createNode(40);
     head->next->next->next->next = createNode(50);
     head->next->next->next->next->next = createNode(60);
+    head->next->next->next->next->next->next = createNode(70);
 
     printList(head);
 

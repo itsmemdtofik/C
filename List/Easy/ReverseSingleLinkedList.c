@@ -17,13 +17,15 @@ Node *reverseSingleLinkedListUsingIterativeMethod(Node *head) {
     Node *currentNode = head;
     Node *previousNode = NULL;
 
+    /* Swap the nextNode pointer and previousNode pointer */
     while (currentNode != NULL) {
         Node *nextNode = currentNode->next; /* Store the next */
         currentNode->next = previousNode; /* Reverse the current node's next pointer */
         previousNode = currentNode; /* Move the pointer one position ahead */
         currentNode = nextNode;
     }
-    return previousNode; /* return the head of reversed linked list */
+    head = previousNode;
+    return head; /* return the head of reversed linked list */
 }
 
 int main() {

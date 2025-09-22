@@ -18,7 +18,7 @@ Approach: By Finding the length of list - Two Pass - O(M) Time and O(1) Space
 #include "Node.h"
 
 /* Function to find the Nth node from the last of a Linked List */
-int nthNodeFromSingleLinkedList(const Node *head, int N) {
+int nthNodeFromSingleLinkedList(const Node *head, const int N) {
     int length = 0;
     const Node *currentNode = head;
     while (currentNode != NULL) {

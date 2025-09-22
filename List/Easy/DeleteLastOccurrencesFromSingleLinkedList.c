@@ -3,7 +3,7 @@ Given a singly linked list and a key, the task is to delete the last occurrence 
 
 Examples:
 
-Input: head: 1 -> 2 -> 3 ->1  -> 4 -> NULL, key = 1
+Input: head: 1 -> 2 -> 3 ->1 -> 4 -> NULL, key = 1
 Output: 1 -> 2 -> 3 -> 4 -> NULL
 
 Approach: The idea is to traverse the linked list from beginning to end.

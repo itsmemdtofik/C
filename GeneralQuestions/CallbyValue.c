@@ -29,6 +29,7 @@ int main(int argc, char *argv[]) {
     /**
      * Even though swap() changes values inside the function, the original a and b in main() remain unchanged.
      * That’s because C is using Call by Value here: only copies of a and b are swapped, not the originals.
+     * Here, a and b are not swapped because the function got only copies of them.
     */
     printf("After Swapping: a = %d and b = %d\n", a, b);
 
